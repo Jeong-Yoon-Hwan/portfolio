@@ -8,5 +8,4 @@ class flex {
     this.alignItems = 'center';
   } 
 }
-
 export default flex

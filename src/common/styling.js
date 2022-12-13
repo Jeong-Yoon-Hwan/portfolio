@@ -1,5 +1,4 @@
 
-
 /**
  * 
  * @param {*} element 적용할 element를 입력
