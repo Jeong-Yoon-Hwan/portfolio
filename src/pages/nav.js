@@ -4,7 +4,6 @@ import slideBox from "../component/slidebox";
 import domStyle from "../common/domStyle";
 import { countStore } from "../store/store";
 
-
 const NavStyle = new domStyle('50%','100vh','antiquewhite')
 
 console.log(NavStyle)
@@ -19,17 +18,17 @@ Nav.appendChild(slideBox)
 //휠 up,down 시에 countStore 값이 1씩 증가하거나 감소함 
 Nav.addEventListener('wheel',function(e){
   if(e.wheelDelta === -120){
-    if(countStore.getState() > 0){
-      countStore.dispatch({type:"DEL"})
+    if(countStore.getState() > 1){
+      countStore.dispatch({type:"DOWN"})
       console.log(countStore.getState())
     }
-    console.log('wheel down')
+    console.log('down')
   } else{
     if(countStore.getState() < 3){
-      countStore.dispatch({type:"ADD"})
+      countStore.dispatch({type:"UP"})
       console.log(countStore.getState())
     }
-    console.log('wheel up')
+    console.log('up')
   }
 })
 
