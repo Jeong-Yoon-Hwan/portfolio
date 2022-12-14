@@ -1,6 +1,5 @@
 import flex from "./flex";
 
-
 class domStyle extends flex{
   /**
    * 
