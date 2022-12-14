@@ -7,12 +7,4 @@ const slideStyle = new domStyle('200px','100px','gray')
 
 styling(slideBox,slideStyle)
 
-
-slideBox.addEventListener('click',()=>{
-  countStore.dispatch({type:"ADD"})
-  console.log(countStore.getState())
-})
-
-
-
 export default slideBox
