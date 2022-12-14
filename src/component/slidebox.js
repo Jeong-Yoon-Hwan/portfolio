@@ -1,10 +1,16 @@
-import styling from "../common/styling"
-import domStyle from "../common/domStyle"
+
+import styles from "../common/styles"
 import { countStore } from "../store/store"
 
-const slideBox = document.createElement('div')
-const slideStyle = new domStyle('200px','100px','gray')
+const slideStyle = {
+  'width':'200px',
+  'height':'100px',
+  'background-color':'gray'
+}
 
-styling(slideBox,slideStyle)
+function slideBox(){
+  return `<div style='${styles(slideStyle)}'>slidBox</div>`
+}
+
 
 export default slideBox

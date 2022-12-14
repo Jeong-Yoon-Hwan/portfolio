@@ -1,10 +1,21 @@
-import styling from "../common/styling"
-import domStyle from "../common/domStyle";
+
+import styles from "../common/styles";
+
+// const Main = document.createElement("div")
+
+const MainStyle = {
+  "width":'50vw',
+  "height":'100vh',
+  "background-color":'white',
+  "display":'flex',
+  'justify-content':'center',
+  'align-items':'center'
+}
 
 
-const Main = document.createElement("div")
-const MainStyle = new domStyle('50%','100vh','white')
 
-styling(Main,MainStyle)
+function Main(){
+  return `<div style='${styles(MainStyle)}'>Main</div>`
+}
 
 export default Main

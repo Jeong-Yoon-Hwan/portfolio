@@ -1,36 +1,40 @@
-import styling from "../common/styling";
 import slideBox from "../component/slidebox";
-
-import domStyle from "../common/domStyle";
+import styles from "../common/styles";
 import { countStore } from "../store/store";
 
-const NavStyle = new domStyle('50%','100vh','antiquewhite')
+const NavStyle = {
+  'width':'50vw',
+  'height':'100vh',
+  'background-color':'antiquewhite',
+  'display':'flex',
+  'justify-content':'center',
+  'align-items':'center'
+}
 
-console.log(NavStyle)
-const Nav = document.createElement("Nav")
-styling(Nav,NavStyle)
+function Nav(){
+  return `
+    <div id='Nav' style='${styles(NavStyle)}'>
+      ${slideBox()}
+    </div>
+  `
+}
 
-//슬라이드 추가
-Nav.appendChild(slideBox)
-
-
-//마우스 휠 감지 이벤트 추가 
-//휠 up,down 시에 countStore 값이 1씩 증가하거나 감소함 
-Nav.addEventListener('wheel',function(e){
-  if(e.wheelDelta === -120){
-    if(countStore.getState() > 1){
-      countStore.dispatch({type:"DOWN"})
-      console.log(countStore.getState())
+window.onload = () =>{
+  let nav = document.getElementById("Nav")
+  nav.addEventListener('wheel',(e)=>{
+    if(e.wheelDelta === -120){
+      if(countStore.getState() > 1){
+        countStore.dispatch({type:"DOWN"})
+        console.log(countStore.getState())
+      }
+    }else{
+      if(countStore.getState() < 3){
+        countStore.dispatch({type:"UP"})
+        console.log(countStore.getState())
+      }
     }
-    console.log('down')
-  } else{
-    if(countStore.getState() < 3){
-      countStore.dispatch({type:"UP"})
-      console.log(countStore.getState())
-    }
-    console.log('up')
-  }
-})
-
+  })
+  
+}
 
 export default Nav;

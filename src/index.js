@@ -7,8 +7,9 @@ import { countStore } from "./store/store"
 
 const root = document.getElementById('root')
 
-
-root.appendChild(Nav) 
-root.appendChild(Main)
+root.innerHTML =`
+  ${Nav()}
+  ${Main()}
+`
 
 
