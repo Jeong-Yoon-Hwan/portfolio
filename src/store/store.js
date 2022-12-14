@@ -1,9 +1,11 @@
 import { createStore } from "redux";
 
-const countModifier = (count = 0, action) => {
-    if(action.type === "ADD"){
+
+//기본 count 값에서 "UP"요청시 +1 DOWN 요청시 -1
+const countModifier = (count = 1, action) => {
+    if(action.type === "UP"){
       return count + 1;
-    }else if(action.type === "DEL"){
+    }else if(action.type === "DOWN"){
       return count - 1;
     }
     return count;
