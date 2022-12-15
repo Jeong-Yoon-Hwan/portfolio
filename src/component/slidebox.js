@@ -1,12 +1,10 @@
 
 import styles from "../common/styles"
 import { countStore } from "../store/store"
+import domStyle from "../common/domStyle"
 
-const slideStyle = {
-  'width':'200px',
-  'height':'100px',
-  'background-color':'gray'
-}
+const slideStyle = new domStyle('200px','100px','gray')
+
 
 function slideBox(){
   return `<div style='${styles(slideStyle)}'>slidBox</div>`

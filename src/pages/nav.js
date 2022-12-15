@@ -1,15 +1,9 @@
 import slideBox from "../component/slidebox";
 import styles from "../common/styles";
 import { countStore } from "../store/store";
+import domStyle from "../common/domStyle";
 
-const NavStyle = {
-  'width':'50vw',
-  'height':'100vh',
-  'background-color':'antiquewhite',
-  'display':'flex',
-  'justify-content':'center',
-  'align-items':'center'
-}
+const NavStyle = new domStyle('50vw','100vh','antiquewhite')
 
 function Nav(){
   return `

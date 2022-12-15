@@ -1,18 +1,8 @@
 
 import styles from "../common/styles";
+import domStyle from "../common/domStyle";
 
-// const Main = document.createElement("div")
-
-const MainStyle = {
-  "width":'50vw',
-  "height":'100vh',
-  "background-color":'white',
-  "display":'flex',
-  'justify-content':'center',
-  'align-items':'center'
-}
-
-
+const MainStyle = new domStyle('50vw','100vh','white')
 
 function Main(){
   return `<div style='${styles(MainStyle)}'>Main</div>`
