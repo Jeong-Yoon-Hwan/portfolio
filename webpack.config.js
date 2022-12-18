@@ -1,34 +1,42 @@
-// path 모듈 불러오기
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const port = process.env.PORT || 3000;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    // 최종 번들링된 자바스크립트
-    filename: 'main.js',
-    // dist를 배포용 폴더로 사용
-    path: path.resolve(__dirname, 'build')
+  mode: 'development', // 1
+  entry: './src/index.js', // 2
+  output: { // 3
+    filename: 'bundle.[hash].js' // 4
   },
-  plugins:[new HtmlWebpackPlugin({
-    template:"./index.html"
-  })],
   module:{
-    rules:[
-      {
-        test:/\.css$/,
-        use:["style-loader","css-loader"]
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg|webp)$/i,
-        use: ['file-loader'],
+    rules:[{
+      test:/\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use:{
+        loader:'babel-loader',
       }
+    },
+    {
+      test:/\.html$/,
+      use:[
+        {
+          loader:'html-loader',
+          options:{
+            minimize:true,
+          }
+        }
+      ]
+    }
+
     ]
   },
+  plugins:[
+    new HtmlWebpackPlugin({
+      template:'public/index.html',
+    })
+  ],
   devServer:{
-    static:{
-      directory:path.resolve(__dirname,'build')
-    },
-    port:8080
+    host:'localhost',
+    port:port,
+    open:true,
   }
-}
+};
