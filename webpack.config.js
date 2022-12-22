@@ -1,41 +1,46 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const port = process.env.PORT || 3000;
-module.exports = {
-  mode: 'development', // 1
-  entry: './src/index.js', // 2
-  output: { // 3
-    filename: 'bundle.[hash].js' // 4
-  },
-  module: {
-    rules: [
-      { // 1
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require('path');
+const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+module.exports = (env, argv) => {
+const prod = argv.mode === "production";
+
+return {
+    mode: prod ? "production" : "development",
+    devtool: prod ? "hidden-source-map" : "eval",
+    entry: "./src/index.tsx",
+    output: {
+        path: path.join(__dirname, "/dist"),
+        filename: "[name].js",
+    },
+    devServer: {
+        port: 3000,
+        hot: true,
+    },
+    resolve: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+    },
+    module: {
+        rules: [
+        {
+            test: /\.tsx?$/,
+            use: ["babel-loader", "ts-loader"],
         },
-      },
-      { // 2
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              minimize: true,
-            },
-          },
         ],
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'public/index.html',
-    })
-  ],
-  devServer: {
-    host: 'localhost',
-    port: port,
-    open: true,
-  },
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            React: "react",
+        }),
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            minify: process.env.NODE_ENV === 'production' ? {
+                  collapseWhitespace: true, // 빈칸 제거
+                  removeComments: true, // 주석 제거
+                } : false,
+            }),
+            new CleanWebpackPlugin(),
+        ],
+    }
 };
