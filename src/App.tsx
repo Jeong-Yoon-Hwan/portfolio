@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BrowserRouter,Route, Routes, Navigate } from "react-router-dom";
 import Title from "./component/Title";
-import List from "./component/List";
 import FirstList from "./pages/FirstList";
 import SecondList from "./pages/SecondList";
 import ThirdList from "./pages/ThirdList";
@@ -19,7 +18,6 @@ const App:React.FC = () =>{
         <Link to="/second"><ListBox color={"second"}>second</ListBox></Link>
         <Link to="/third"><ListBox color={"first"}>third</ListBox></Link>
         <Link to="/fourth"><ListBox color={"second"}>fourth</ListBox></Link>
-   
       </Nav>
 
       <Main>
