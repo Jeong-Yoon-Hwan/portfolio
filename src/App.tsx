@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BrowserRouter,Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter,Route, Routes } from "react-router-dom";
 import Title from "./component/Title";
 import FirstList from "./pages/FirstList";
 import SecondList from "./pages/SecondList";
 import ThirdList from "./pages/ThirdList";
 import FourthList from "./pages/FourthList";
+
 
 
 const App:React.FC = () =>{
@@ -31,6 +32,8 @@ const App:React.FC = () =>{
         
       </Main>
       </BrowserRouter>
+
+
     </Container>
   )
 }
@@ -73,7 +76,6 @@ interface styleProps {
 
 const ListBox= styled.div<styleProps>`
   width:100%;
-  //height:calc(70% / 4);
   height:calc(70vh / 4);
   background-color: ${(props)=>backgroundColor[props.color]};
   display: flex;
@@ -81,3 +83,4 @@ const ListBox= styled.div<styleProps>`
   align-items:center;
   border-radius: 2px;
 `
+  
