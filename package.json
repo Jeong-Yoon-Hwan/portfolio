@@ -42,6 +42,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
     "styled-components": "^5.3.6",
     "v6": "^0.0.0"
