@@ -3,7 +3,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import SlideBox from "../component/SlideBox";
 
+
 const FirstList = () =>{
+  
+// 이미지 경로 배열
+  const arr:any  = ['/images/first/1.png','/images/first/2.png','/images/first/3.png','/images/first/4.png'];
+
   return(
     <Container>
       {/* 헤더 */}
@@ -14,9 +19,13 @@ const FirstList = () =>{
       {/* 메인화면 */}
       <Main>
         <section>
-          <SlideBox></SlideBox>
+          <SlideBox img={...arr}></SlideBox>
+         
         </section>
-        <section></section>
+        <section>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum!
+        ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum!ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum!ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum!ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae ea atque illum necessitatibus ipsum ducimus libero incidunt, ab quod exercitationem dolore cum officiis. Autem, eius! Distinctio temporibus quae autem rerum!
+        </section>
       </Main>
     </Container>
   )
@@ -43,15 +52,18 @@ const Title = styled.div`
 `
 const Main = styled.div`
   width:100%;
-  height:100%;
+  height:max-content;
   background-color: gray;
   padding:10px;
   display: flex;
+  flex-direction: column;
+  
+  
 
   //좌측 화면
   & > section {
-    width:50%;
-    height: 100%;
+    width:100%;
+    height: max-content;
     background-color: lightgray;
     display: flex;
     justify-content: center;

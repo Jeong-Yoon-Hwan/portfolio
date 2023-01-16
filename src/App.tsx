@@ -54,6 +54,7 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   padding: 50px;
+  overflow-y: scroll;
 `
 //메뉴화면
 const Nav = styled.div`

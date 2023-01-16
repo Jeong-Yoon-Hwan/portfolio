@@ -8,13 +8,14 @@ import { useEffect, useRef, useState } from "react";
 //    버튼, moveNext, movePrev
 // 3. 이미지 폭 , IMG_WIDTH
 // 4. 슬라이드 이동할 거리 계산, 현재 페이지번호 * 이미지 크기
-const SlideBox = () =>{
+const SlideBox = (props:any) =>{
   
 
   const slideRef:any = useRef(null);
   const [currentImgOrder,setCurrentImgOrder] = useState(0)
-  const IMG_WIDTH = 300;
+  const IMG_WIDTH = 500;
   const slideRange = currentImgOrder * IMG_WIDTH;
+
 
   useEffect(()=>{
     slideRef.current.style.transition = "all 0.5s ease-in-out";
@@ -24,7 +25,7 @@ const SlideBox = () =>{
 
 
   const moveNext = () =>{
-    if(currentImgOrder === 2) {
+    if(currentImgOrder === (props.img.length-1)) {
       setCurrentImgOrder(0)
       return
     }
@@ -38,19 +39,27 @@ const SlideBox = () =>{
     setCurrentImgOrder(currentImgOrder - 1)
    
   };
+  const [imgArr,setImgArr] = useState([])
 
-
+  useEffect(()=>{
+    console.log(props.img.length)
+    setImgArr(props.img)
+  },[])
   return(
     <Container>
-      <IoIosArrowBack style={{fontSize:50}} onClick={movePrev} />
+      <IoIosArrowBack style={{fontSize:50,cursor:"pointer"}} onClick={movePrev} />
       <Wrap>
         <Slide ref={slideRef}>
-          <div>first</div>
-          <div>second</div>
-          <div>third</div>
+          {
+            imgArr.map((item:any)=>(
+            <div key={item}><img src={item}></img></div>
+            ))
+          }
+          {/* <div><img src={props.img[0]}></img></div> */}
+          
         </Slide>
       </Wrap>
-      <IoIosArrowForward style={{fontSize:50}} onClick={moveNext}/>
+      <IoIosArrowForward style={{fontSize:50,cursor:"pointer"}} onClick={moveNext}/>
     </Container>
   )
 }
@@ -67,29 +76,28 @@ const Container = styled.div`
   
 `
 const Wrap = styled.div`
-  width: 300px;
+  width: 500px;
   height:300px;
   overflow-x: hidden;
+ 
 `
 const Slide = styled.div`
-  width:900px;
+  width:max-content;
   height:300px;
   background-color: aliceblue;
   display: flex;
   
-  & > div:nth-child(1){
-    width:300px;
+  & > div{
+    width:500px;
     height:300px;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > img {
+    width:100%;
+    
   }
-  &> div:nth-child(2){
-    width: 300px;
-    height:300px;
-    background-color: black;
-  }
-  & > div:nth-child(3){
-    width:300px;
-    height: 300px;
-    background-color: green;
-  }
+}
+
+  
 `
