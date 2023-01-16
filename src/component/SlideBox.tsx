@@ -3,7 +3,13 @@ import {IoIosArrowBack} from "react-icons/Io";
 import {IoIosArrowForward} from "react-icons/Io";
 import { useEffect, useRef, useState } from "react";
 
+// 1. 슬라이드 이미지를 담을 요소 선언, slideRef
+// 2. 슬라이드를 넘길 때마다 useState로 페이지번호를 관리, currentImgOrder 
+//    버튼, moveNext, movePrev
+// 3. 이미지 폭 , IMG_WIDTH
+// 4. 슬라이드 이동할 거리 계산, 현재 페이지번호 * 이미지 크기
 const SlideBox = () =>{
+  
 
   const slideRef:any = useRef(null);
   const [currentImgOrder,setCurrentImgOrder] = useState(0)
