@@ -11,7 +11,7 @@ return {
     devtool: prod ? "hidden-source-map" : "eval",
     entry: "./src/index.tsx",
     output: {
-        path: path.join(__dirname, "/dist"),
+        path: path.join(__dirname, "/build"),
         filename: "[name].js",
         publicPath: '/'
     },
