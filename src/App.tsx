@@ -15,10 +15,10 @@ const App:React.FC = () =>{
       <BrowserRouter>
       <Nav>
         <Title></Title>
-        <Link to="/first"><ListBox color={"first"}>first</ListBox></Link>
-        <Link to="/second"><ListBox color={"second"}>second</ListBox></Link>
-        <Link to="/third"><ListBox color={"first"}>third</ListBox></Link>
-        <Link to="/fourth"><ListBox color={"second"}>fourth</ListBox></Link>
+        <Link to="/first" style={{textDecoration: "none",color:'white',fontWeight:'bold'}}><ListBox color={"first"}>Project 1</ListBox></Link>
+        <Link to="/second" style={{textDecoration: "none",color:'white',fontWeight:'bold'}}><ListBox color={"second"}>Project 2</ListBox></Link>
+        <Link to="/third" style={{textDecoration: "none",color:'white',fontWeight:'bold'}}><ListBox color={"first"}>Project 3</ListBox></Link>
+        <Link to="/fourth" style={{textDecoration: "none",color:'white',fontWeight:'bold'}}><ListBox color={"second"}>Project 4</ListBox></Link>
       </Nav>
 
       <Main>
@@ -44,44 +44,58 @@ const Container = styled.div`
   width:100vw;
   height:100vh;
   display: flex;
+  font-family: var(--font-NanumGothic);
 `
 //메인화면 
 const Main = styled.div`
   width:100vw;
   height:100vh;
-  background-color: #FFC3A1;
+  background-color:#404258;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px;
   overflow-y: scroll;
 `
-//메뉴화면
+
+//메뉴 영역 
 const Nav = styled.div`
   width:30vw;
   height:100vh;
-  background-color: rgba(182,87,84);
-  padding:10px;
+  background-color: #404258;
+  //padding:10px;
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap:10px;
 `
 
 const backgroundColor ={
-  first:"rgba(255,255,255,0.3)",
+  first:"rgba(255,255,255,0.2)",
   second:"rgba(255,255,255,0.2)",
 }
 interface styleProps {
   color:"first" | "second"
 }
 
+// 메뉴 리스트
 const ListBox= styled.div<styleProps>`
-  width:100%;
+  width:250px;
   height:calc(70vh / 4);
   background-color: ${(props)=>backgroundColor[props.color]};
   display: flex;
   justify-content: center;
   align-items:center;
-  border-radius: 2px;
+  border-radius: 0px 20px 20px 0px;
+
+  :hover{
+    background-color: tomato;
+  }
+  transition: background 0.5s ease-in-out;
+  
+  @media screen and (max-width: 1100px) {
+    width:200px;
+  }
+  
 `
   
