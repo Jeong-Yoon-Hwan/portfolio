@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --open --hot --progress",
     "build": "webpack --mode=production  --progress",
-    "start": "webpack --mode=development  --progress"
+    "start": "webpack --mode=development  --progress",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   "bugs": {
     "url": "https://github.com/Jeong-Yoon-Hwan/portfolio/issues"
   },
-  "homepage": "https://github.com/Jeong-Yoon-Hwan/portfolio#readme",
+  
+  "homepage": "https://github.com/Jeong-Yoon-Hwan/portfolio.git",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
@@ -42,6 +44,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.2",
     "styled-components": "^5.3.6",
