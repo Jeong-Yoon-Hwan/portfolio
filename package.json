@@ -7,6 +7,7 @@
     "dev": "webpack-dev-server --mode=development --open --hot --progress",
     "build": "webpack --mode=production  --progress",
     "start": "webpack --mode=development  --progress",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "repository": {
@@ -20,7 +21,7 @@
     "url": "https://github.com/Jeong-Yoon-Hwan/portfolio/issues"
   },
   
-  "homepage": "https://github.com/Jeong-Yoon-Hwan/portfolio.git",
+  "homepage": "https://Jeong-Yoon-Hwan.github.io/portfolio",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",

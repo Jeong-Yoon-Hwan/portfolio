@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BrowserRouter,Route, Routes } from "react-router-dom";
+import {HashRouter, BrowserRouter,Route, Routes } from "react-router-dom";
 import Title from "./component/Title";
 import FirstList from "./pages/FirstList";
 import SecondList from "./pages/SecondList";
@@ -12,7 +12,7 @@ import FourthList from "./pages/FourthList";
 const App:React.FC = () =>{
   return(
     <Container>
-      <BrowserRouter>
+      <HashRouter>
       <Nav>
         <Title></Title>
         <Link to="/first" style={{textDecoration: "none",color:'white',fontWeight:'bold'}}><ListBox color={"first"}>Project 1</ListBox></Link>
@@ -32,7 +32,7 @@ const App:React.FC = () =>{
           </Routes>
         
       </Main>
-      </BrowserRouter>
+      </HashRouter>
 
 
     </Container>
