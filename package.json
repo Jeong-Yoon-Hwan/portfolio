@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --open --hot --progress",
-    "build": "webpack --mode=production  --progress",
-    "start": "webpack --mode=development  --progress",
+    "build": "webpack --mode production",
+    "start": "webpack serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --remote upstream"
   },
   "repository": {
     "type": "git",
