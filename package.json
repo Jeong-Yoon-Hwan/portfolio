@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "start": "webpack serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --remote upstream"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
