@@ -12,7 +12,7 @@ import FourthList from "./pages/FourthList";
 const App:React.FC = () =>{
   return(
     <Container>
-      <HashRouter>
+      <HashRouter basename="/portfolio">
       <Nav>
         <Title></Title>
         <Link to="/first" style={{textDecoration: "none",color:'white',fontWeight:'bold'}}><ListBox color={"first"}>Project 1</ListBox></Link>
